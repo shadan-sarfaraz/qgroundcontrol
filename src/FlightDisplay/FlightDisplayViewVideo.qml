@@ -38,10 +38,11 @@ Item {
 
     property double _thermalHeightFactor: 0.85 //-- TODO
 
-    Rectangle {
+    Image {
         id:             noVideo
         anchors.fill:   parent
-        color:          Qt.rgba(0,0,0,0.75)
+        source:         "/res/NoVideoBackground.jpg"
+        fillMode:       Image.PreserveAspectCrop
         visible:        !(QGroundControl.videoManager.decoding)
         QGCLabel {
             text:               QGroundControl.settingsManager.videoSettings.streamEnabled.rawValue ? qsTr("WAITING FOR VIDEO") : qsTr("VIDEO DISABLED")
